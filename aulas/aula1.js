@@ -14,4 +14,6 @@ let distanciaKM = 350;
 
 let gastoMedio = distanciaKM / precoCombustivel;
 
-console.log(gastoMedio);
+console.log(gastoMedio); 
+
+//dd
