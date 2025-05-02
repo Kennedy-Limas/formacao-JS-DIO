@@ -8,12 +8,13 @@
 
 // Imprima no console o valor que será gasto para realizar esta viagem.
 
-let precoCombustivel = 5.98;
-let distanciaKM = 350;
+let precoCombustivel = 5.79;
+let kmPorLitros = 10;
+let distanciaKM = 100;
 
 
-let gastoMedio = distanciaKM / precoCombustivel;
+let valorDaViagem = distanciaKM / kmPorLitros * precoCombustivel;
 
-console.log(gastoMedio); 
+console.log(valorDaViagem.toFixed(2)); 
 
-//dd
+
