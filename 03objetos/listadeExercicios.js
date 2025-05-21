@@ -76,4 +76,3 @@ console.log(kennedy.calcularIMC());
 
 const flavio = new Pessoa('Flavio', 100, 1.75);
 console.log(kennedy.classificarIMC());
-
