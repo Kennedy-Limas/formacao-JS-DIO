@@ -1,47 +1,58 @@
-function convertPokemonTypesToli(pokemonTypes) {
-    return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li>`)
-}
 
+const pokemonListName = document.getElementById('pokemonList')
+const loadMoreButton = document.getElementById('loadMoreButton')
+const limit = 10
+let offset = 0
 
+const maxRecodsPagination = 151
 
-function convertPokemonToList(pokemon) {
-    return`
-    <li class="pokemon">
-        <span class="number">#${pokemon.order}</span>
+function loadMoreButtonItems(offset, limit) {
+  pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
+    const newHtml = pokemons.map((pokemon) => 
+        `
+    <li class="pokemon ${pokemon.type} ">
+        <span class="number">#${pokemon.number}</span>
         <span class="name">${pokemon.name}</span>
     
         <div class="detail">
             <ol class="types" >
 
-                ${convertPokemonTypesToli(pokemon.types).join('')}
+                ${pokemon.types
+                  .map((type) => `<li class="type ${type} ">${type}</li>`)
+                  .join("")}
 
             </ol>
 
-            <img src=" ${pokemon.sprites.other.dream_world.front_default} " alt="${pokemon.name}">
+            <img src=" ${pokemon.photo} " alt="${pokemon.name}">
         </div>
     </li>
 
-    `;
+    `
+    ).join("");
+    pokemonListName.innerHTML += newHtml;
+  });
 }
 
-const pokemonListName = document.getElementById('pokemonList')
+loadMoreButtonItems( offset, limit)
 
-pokeApi.getPokemons().then((pokemons = []) => {
+loadMoreButton.addEventListener('click', () => {
+    offset += limit
 
-        const newHtml = pokemons.map(convertPokemonToList).join('')  
-        pokemonListName.innerHTML = newHtml 
+    const qtdRegisterNextPage = offset + limit
+
+    if(qtdRegisterNextPage >= maxRecodsPagination) {
+        const newLimit = maxRecodsPagination - offset 
+        loadMoreButtonItems(offset, newLimit)
+
+        loadMoreButton.parentElement.removeChild(loadMoreButton)
+    } else {
+        loadMoreButtonItems(offset, limit)
+    }
 
 
-        //O  código acima substitui esse trecho para reduzir linhas de código e utilizar funções especificas
-        // const listItems = []
 
-        // for (let i = 0; i < pokemons.length; i++) {
-        //     const pokemon = pokemons[i];    
-        //     listItems.push(convertPokemonToList(pokemon))
-        // }
-        // console.log(listItems)
+})
 
-    })
 
 
 
