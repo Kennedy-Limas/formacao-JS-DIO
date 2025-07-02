@@ -1,10 +1,11 @@
 
 const pokemonListName = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
+
 const limit = 10
 let offset = 0
-
 const maxRecodsPagination = 151
+
 
 function loadMoreButtonItems(offset, limit) {
   pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
