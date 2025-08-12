@@ -11,46 +11,42 @@ body {
 .main {
     margin: .5rem;
     padding: .5rem;
-    border: 1px solid red;
+    border: 1px solid #fff;
     border-radius: 1rem;
-    padding: 1rem;
 }
 
-.information {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.information p {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: .5rem;
-    font-size: 1.2rem;
-}
-
-.information p::before {
-
-    display: inline-block;
-    width: 20px;
-    height: 20px;
+.main::after,
+.main::before {
+    content: '';
+    background-image: url('../img/background.svg');
     background-repeat: no-repeat;
     background-size: contain;
-    margin-right: .5rem;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 140vw;
+    height: 100vh;
+    z-index: -1;
 }
 
+.main::after {
+    content: '';
+    top: auto;
+    left: auto;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
 
-.information .job::before {
-   content: '💻';
-}
-.information .location::before {
-   content: '📍';
-}
-.information .phone::before {
-   content: '📲';
-}
-.information .email::before {
-   content: '📑';
+@media only screen and (min-width: 768px) {
+
+    .main {
+        width: 1024px;
+        margin: 1rem auto;
+    }
+
+    .main::before, .main::after {
+        width: 70vw;
+    }
 }
