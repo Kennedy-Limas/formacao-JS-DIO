@@ -1,0 +1,40 @@
+.languages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.languages li {
+    list-style: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #010000;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    flex-direction: row;
+
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 207, 239, 0.467);
+}
+
+.languages li::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    background-repeat: no-repeat;
+    background-image: url('../img/icon/check.svg');
+}
+
+.languages li ul {
+    color: #010000;
+}

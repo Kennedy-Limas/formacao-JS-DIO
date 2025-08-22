@@ -15,6 +15,18 @@ body {
     border-radius: 1rem;
 }
 
+a {
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
 .main::after,
 .main::before {
     content: '';

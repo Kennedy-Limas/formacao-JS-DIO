@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./assets/CSS/header.css">
     <link rel="stylesheet" href="./assets/CSS/global.css">
     <link rel="stylesheet" href="./assets/CSS/acordeon.css">
+    <link rel="stylesheet" href="./assets/CSS/languages.css">
+    <link rel="stylesheet" href="./assets/CSS/portfolio.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +20,7 @@
 </head>
 <body>
 
-    <div class="main">
+    <main class="main">
         <header class="header">
             <img src="./assets/img/fotoKennedyCortada.jpg" alt="Foto de Perfil" class="photo">
             <h1 class="title">Olá, sou Kennedy Lima</h1>
@@ -26,27 +28,51 @@
             <div class="information">
                 <p class="job" >Desenvolvedor Front-End</p>
                 <p class="location" >Barrinha - SP</p>
-                <p class="phone" >(16) 9 9217-4443</p>
-                <p class="email" >ka.dl@hotmail.com</p>
+                <p class="phone" >
+                    <a href="tel:(16) 9 9217-4443">(16) 9 9217-4443</a>
+                </p>
+                <p class="email" >
+                    <a href="mailto:ka.dl@hotmail.com">ka.dl@hotmail.com</a>
+                </p>
             </div>
         </header>
 
 
         <section class="acordeon open">
             <button class="trigger" type="button">
-                <span class="tittle">Idiomas</span>
+               Idiomas
             </button>
             <div class="content">
-                <ul>
+                <ul class="languages">
                     <li>Português</li>
                     <li>Inglês</li>
                 </ul>
             </div>
-         
         </section>
 
+        <section class="acordeon open">
+            <button class="trigger" type="button">
+                Portfólio
+            </button>
+            <div class="content">
+                <ul class="portfolio">
+                    <li>
+                        <span class="tittle github" >Site profissional</span>
+                        <a href="http://www.google.com" target="_blank">www.google.com</a>
+                    </li>
+                    <li>
+                        <span class="tittle github" >Site profissional</span>
+                        <a href="http://www.google.com" target="_blank">www.google.com</a>
+                    </li>
+                    <li>
+                        <span class="tittle github" >Site profissional</span>
+                        <a href="http://www.google.com" target="_blank">www.google.com</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-    </div>
+    </main>
     <script src="./assets/js/acordeon.js"></script>
 </body>
 </html>
